@@ -1,154 +1,118 @@
 import { motion } from 'framer-motion';
-import { Phone, CalendarCheck, ShieldCheck, Star, Award } from 'lucide-react';
+import { Phone, CalendarCheck, Award } from 'lucide-react';
 import { CONTACT } from '../data/content';
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: (i = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.12, ease: 'easeOut' },
-  }),
-};
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center bg-gradient-to-br from-[#0F2338] via-[#1A3A5C] to-[#2A5280] overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center mesh-gradient overflow-hidden pt-20"
     >
-      {/* Hintergrund-Muster */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-[#4CAF50] blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-[#4CAF50] blur-3xl" />
+      {/* Mesh Background Layers */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="mesh-ball w-[100%] h-[100%] bg-[#4CAF50] top-[-20%] left-[-20%] mix-blend-screen opacity-20" />
+        <div className="mesh-ball w-[80%] h-[80%] bg-[#1A3A5C] bottom-[-10%] right-[-10%] mix-blend-overlay opacity-30 [animation-delay:-5s]" />
+        <div className="mesh-ball w-[60%] h-[60%] bg-[#2A5280] top-[10%] right-[20%] mix-blend-lighten opacity-20 [animation-delay:-10s]" />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 z-10">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-          {/* Linke Spalte — Text & CTAs */}
-          <div>
-            {/* Badge */}
+          {/* Text Content - Spans 7 columns on LG */}
+          <div className="lg:col-span-7">
             <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="show"
-              custom={0}
-              className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 text-sm font-medium px-4 py-2 rounded-full mb-6 backdrop-blur-sm"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white/80 text-xs font-bold uppercase tracking-[0.2em] px-5 py-2 rounded-full mb-8 backdrop-blur-xl"
             >
-              <Award className="w-4 h-4 text-[#4CAF50]" />
-              DENA-zugelassene Energie-Effizienz-Experten
+              <Award className="w-3.5 h-3.5 text-[#4CAF50]" />
+              DENA-zertifizierte Experten
             </motion.div>
 
-            {/* Headline */}
             <motion.h1
-              variants={fadeUp}
-              initial="hidden"
-              animate="show"
-              custom={1}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-8"
             >
-              Bis zu{' '}
-              <span className="text-[#4CAF50]">70&nbsp;%</span>
-              <br />
-              Förderung für Ihr
-              <br />
-              Zuhause
+              Maximale <span className="shimmer-text">70&nbsp;%</span> <br />
+              Förderung für Ihre <br />
+              Sanierung.
             </motion.h1>
 
-            {/* Subline */}
             <motion.p
-              variants={fadeUp}
-              initial="hidden"
-              animate="show"
-              custom={2}
-              className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-xl text-white/70 leading-relaxed mb-10 max-w-xl"
             >
-              Ihr unabhängiger Energieberater in Schorndorf & Umgebung. Wir holen das Maximum
-              an KfW- und BAFA-Förderung für Sie heraus — von der Beratung bis zum Bescheid.
+              Unabhängige Energieberatung in Schorndorf. Wir begleiten Sie 
+              vom Sanierungsfahrplan bis zur fertigen Auszahlung – professionell, 
+              technisch fundiert und verlässlich.
             </motion.p>
 
-            {/* CTAs */}
             <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="show"
-              custom={3}
-              className="flex flex-col sm:flex-row gap-4 mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-5"
             >
               <a
                 href="#kontakt"
-                className="flex items-center justify-center gap-2 bg-[#4CAF50] hover:bg-[#388E3C] text-white font-bold px-7 py-4 rounded-xl text-base transition-colors shadow-lg shadow-green-900/30"
+                className="flex items-center justify-center gap-3 bg-[#4CAF50] hover:bg-[#388E3C] text-white font-bold px-8 py-5 rounded-2xl text-lg transition-all shadow-2xl shadow-green-900/40 hover:scale-[1.02] active:scale-[0.98]"
               >
-                <CalendarCheck className="w-5 h-5" />
+                <CalendarCheck className="w-6 h-6" />
                 Kostenlose Erstberatung
               </a>
               <a
                 href={`tel:${CONTACT.telefon.replace(/\s/g, '')}`}
-                className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-7 py-4 rounded-xl text-base transition-colors backdrop-blur-sm"
+                className="flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold px-8 py-5 rounded-2xl text-lg transition-all backdrop-blur-xl hover:border-white/20"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-5 h-5 opacity-70" />
                 {CONTACT.telefon}
               </a>
             </motion.div>
-
-            {/* Trust-Signale */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="show"
-              custom={4}
-              className="flex flex-wrap gap-6 text-white/70 text-sm"
-            >
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#4CAF50]" />
-                DENA zertifiziert
-              </div>
-              <div className="flex items-center gap-2">
-                <Star className="w-4 h-4 text-[#4CAF50]" />
-                4,6 / 5 Sterne Bewertung
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#4CAF50]" />
-                Mo–So 07–20 Uhr erreichbar
-              </div>
-            </motion.div>
           </div>
 
-          {/* Rechte Spalte — Kennzahlen-Karten */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={2}
-            className="grid grid-cols-2 gap-4"
-          >
-            {[
-              { wert: '70 %', label: 'max. Förderquote', farbe: '#4CAF50' },
-              { wert: '60.000 €', label: 'max. förderfähige Kosten pro Wohneinheit', farbe: '#4CAF50' },
-              { wert: '2', label: 'DENA-zertifizierte Experten', farbe: '#1A3A5C' },
-              { wert: '4,6 ★', label: 'Kundenbewertung', farbe: '#1A3A5C' },
-            ].map((kpi, i) => (
-              <div
-                key={i}
-                className="bg-white/10 border border-white/15 backdrop-blur-sm rounded-2xl p-6 text-white"
-              >
-                <div className="text-3xl font-bold mb-1" style={{ color: '#4CAF50' }}>
-                  {kpi.wert}
-                </div>
-                <div className="text-white/70 text-sm leading-snug">{kpi.label}</div>
-              </div>
-            ))}
-          </motion.div>
+          {/* Bento-Grid Metrics - Spans 5 columns on LG */}
+          <div className="lg:col-span-5">
+            <div className="bento-grid">
+              {[
+                { wert: '70 %', label: 'Förderquote', size: 'bento-item-tall', delay: 0.6 },
+                { wert: '60T €', label: 'Max. Kosten', delay: 0.7 },
+                { wert: 'Expert', label: 'Zertifizierung', delay: 0.8 },
+                { wert: '4,6 ★', label: 'Bewertung', size: 'bento-item-wide', delay: 0.9 },
+              ].map((kpi, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                  transition={{ duration: 0.8, delay: kpi.delay, ease: [0.16, 1, 0.3, 1] }}
+                  className={`${kpi.size || ''} glass p-6 rounded-[2rem] flex flex-col justify-end group hover:bg-white/10 transition-all border-white/5 hover:border-white/20`}
+                >
+                  <div className="text-4xl lg:text-5xl font-bold mb-2 group-hover:scale-105 transition-transform origin-left" style={{ color: '#4CAF50' }}>
+                    {kpi.wert}
+                  </div>
+                  <div className="text-white/50 text-[10px] font-bold uppercase tracking-widest">{kpi.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Scroll-Indikator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-2 bg-white/60 rounded-full" />
-        </div>
-      </div>
+      {/* Scroll-Indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+      >
+        <span className="text-white/20 text-[10px] uppercase tracking-[0.3em] font-bold">Scroll</span>
+        <div className="w-px h-12 bg-gradient-to-b from-white/20 to-transparent" />
+      </motion.div>
     </section>
   );
 }

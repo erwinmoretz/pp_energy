@@ -239,8 +239,9 @@ export default function Kontakt() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex items-center justify-center gap-2 bg-[#4CAF50] hover:bg-[#388E3C] disabled:bg-[#4CAF50]/60 text-white font-bold px-7 py-4 rounded-xl transition-colors text-base"
+                    className="relative overflow-hidden group w-full flex items-center justify-center gap-2 bg-[#4CAF50] hover:bg-[#388E3C] disabled:bg-[#4CAF50]/60 text-white font-bold px-7 py-4 rounded-xl transition-all text-base hover:scale-[1.01] active:scale-[0.99]"
                   >
+                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
                     <Send className="w-5 h-5" />
                     {isSubmitting ? 'Wird gesendet …' : 'Anfrage kostenlos senden'}
                   </button>

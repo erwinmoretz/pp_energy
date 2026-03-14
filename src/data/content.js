@@ -1,5 +1,6 @@
 export const NAV_LINKS = [
   { label: 'Leistungen', href: '#leistungen' },
+  { label: 'So läuft es ab', href: '#prozess' },
   { label: 'Förderung', href: '#foerderung' },
   { label: 'Über uns', href: '#ueber-uns' },
   { label: 'Referenzen', href: '#referenzen' },
@@ -96,18 +97,22 @@ export const TEAM = [
   {
     name: 'Thomas Pinneger',
     titel: 'B.Sc.',
-    rolle: 'Gründer & Projektleiter',
+    rolle: 'Geschäftsführer & Energieberater',
+    quote: '„Die Energiewende fängt im eigenen Zuhause an – wir machen sie planbar und profitabel.“',
     beschreibung:
       'Ingenieurswissenschaftlicher Hintergrund, vormals bei Netze BW GmbH tätig. Spezialisiert auf Fördermittelberatung, iSFP und Wohngebäude-Energetik.',
     qualifikationen: ['DENA Energie-Effizienz-Experte', 'iSFP-Berechtigter', 'KfW-Sachverständiger'],
+    whatsapp: '4915566356341',
   },
   {
     name: 'Saphiro Moreno Praczka',
     titel: 'M.Sc.',
-    rolle: 'Energieeffizienz-Experte',
+    rolle: 'Geschäftsführer & Energieberater',
+    quote: '„Präzision in der Berechnung ist das Fundament für eine Sanierung ohne böse Überraschungen.“',
     beschreibung:
       'Maschinenbau mit Schwerpunkt Energieeffizienz. Spezialisiert auf technische Berechnungen, Heizlast, Thermografie und Nichtwohngebäude.',
-    qualifikationen: ['DENA Energie-Effizienz-Experte', 'Heizlastberechnung DIN EN 12831', 'Thermografieanalyse'],
+    qualifikationen: ['DENA Energie-Effizienz-Experte', 'Heizlastberechnung DIN EN 12831', 'Thermografie-Spezialist'],
+    whatsapp: '4915566356341',
   },
 ];
 

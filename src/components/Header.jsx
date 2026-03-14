@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { NAV_LINKS, CONTACT } from '../data/content';
+import logo from '../assets/logo.avif';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,21 +17,17 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled 
+          ? 'bg-white/80 shadow-lg shadow-black/5 backdrop-blur-lg py-2' 
+          : 'bg-white/40 backdrop-blur-md py-4'
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-[#1A3A5C] flex items-center justify-center group-hover:bg-[#4CAF50] transition-colors">
-              <Zap className="w-5 h-5 text-white" />
-            </div>
-            <div className="leading-tight">
-              <span className="block text-[#1A3A5C] font-bold text-lg">P&P</span>
-              <span className="block text-[#475569] text-xs font-medium -mt-1">Energieberatung</span>
-            </div>
+          <a href="#hero" className="flex items-center">
+            <img src={logo} alt="P&P Energieberatung" className="h-12 w-auto" />
           </a>
 
           {/* Desktop Nav */}

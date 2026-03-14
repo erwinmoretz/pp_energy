@@ -21,7 +21,13 @@ export default function Referenzen() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <span className="inline-block bg-[#1A3A5C]/8 text-[#1A3A5C] font-semibold text-sm px-4 py-1.5 rounded-full mb-4">
             Kundenstimmen
           </span>
@@ -33,7 +39,7 @@ export default function Referenzen() {
             <span className="text-[#1A3A5C] font-bold text-lg">4,6 / 5</span>
             <span className="text-[#64748B] text-sm">auf energie-experten.org</span>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bewertungskarten */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">

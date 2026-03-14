@@ -9,6 +9,18 @@ export default function Foerderung() {
     <section id="foerderung" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-4 lg:hidden"
+        >
+          <span className="inline-block bg-[#1A3A5C]/8 text-[#1A3A5C] font-semibold text-sm px-4 py-1.5 rounded-full">
+            KfW & BAFA Förderung 2025
+          </span>
+        </motion.div>
+
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* Linke Seite — Text */}

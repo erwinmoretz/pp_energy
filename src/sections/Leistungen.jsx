@@ -49,20 +49,25 @@ export default function Leistungen() {
               <motion.div
                 key={service.title}
                 variants={cardVariants}
-                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md border border-slate-100 hover:border-[#4CAF50]/30 transition-all group cursor-default"
+                whileHover={{ y: -8, transition: { duration: 0.2 } }}
+                className="relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl border border-slate-100 hover:border-[#4CAF50]/40 transition-all group cursor-default overflow-hidden"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#1A3A5C]/8 flex items-center justify-center mb-5 group-hover:bg-[#4CAF50]/10 transition-colors">
-                  {Icon && <Icon className="w-6 h-6 text-[#1A3A5C] group-hover:text-[#4CAF50] transition-colors" />}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#4CAF50]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                
+                <div className="relative z-10">
+                  <div className="w-12 h-12 rounded-xl bg-[#1A3A5C]/5 flex items-center justify-center mb-5 group-hover:bg-[#4CAF50]/10 transition-colors group-hover:scale-110 duration-300">
+                    {Icon && <Icon className="w-6 h-6 text-[#1A3A5C] group-hover:text-[#4CAF50] transition-colors" />}
+                  </div>
+                  <span className="text-xs font-semibold text-[#4CAF50] uppercase tracking-wide">
+                    {service.short}
+                  </span>
+                  <h3 className="text-base font-bold text-[#1A3A5C] mt-1 mb-3 leading-snug">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-[#475569] leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-                <span className="text-xs font-semibold text-[#4CAF50] uppercase tracking-wide">
-                  {service.short}
-                </span>
-                <h3 className="text-base font-bold text-[#1A3A5C] mt-1 mb-3 leading-snug">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-[#475569] leading-relaxed">
-                  {service.description}
-                </p>
               </motion.div>
             );
           })}

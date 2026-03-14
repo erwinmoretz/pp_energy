@@ -2,6 +2,7 @@ export const NAV_LINKS = [
   { label: 'Leistungen', href: '#leistungen' },
   { label: 'So läuft es ab', href: '#prozess' },
   { label: 'Förderung', href: '#foerderung' },
+  { label: 'Konfigurator', href: '#konfigurator' },
   { label: 'Über uns', href: '#ueber-uns' },
   { label: 'Referenzen', href: '#referenzen' },
   { label: 'Kontakt', href: '#kontakt' },

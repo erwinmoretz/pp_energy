@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.pp-energieberatung.de)",
+      "WebSearch",
+      "WebFetch(domain:sellwerk.de)",
+      "WebFetch(domain:www.energie-experten.org)"
+    ]
+  }
+}

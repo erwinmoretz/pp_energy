@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:web.archive.org)",
+      "WebFetch(domain:trustlocal.de)",
+      "WebFetch(domain:adresse.dastelefonbuch.de)",
+      "WebFetch(domain:www.kleinanzeigen.de)"
+    ]
+  }
+}
